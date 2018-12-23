@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python
+
 import praw
 import os
 import string
@@ -61,7 +62,7 @@ def write_to_file(update, url_file, title_file):
             for post in update:
                 g.write("\n" + post.title)
 
-# Function to read from file, create list of (title,url) pairs
+# Function to read from file, create list of the contents (either urls or titles)
 def create_list_from_file(filename):
     lst = []
     if not os.path.isfile(filename):
@@ -152,7 +153,7 @@ for submission in subreddit.new(limit = 12):
 append_to_file(vocation_posts_lst, "vocation_url.txt", "vocation_titles.txt")
 append_to_file(monitored_posts_lst, "monitored_url.txt", "monitored_titles.txt")
 
-# Monitoring files. If posts are deemed popular, they will be moved into discuss files. 
+# Look for popular discussion posts among those that are being monitored
 mon_urls = create_list_from_file("monitored_url.txt")
 new_mon_posts = []
 discuss_posts = []
