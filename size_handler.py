@@ -28,8 +28,6 @@ def write_to_file(update, filename):
 def control_size(url_file, title_file):
     url_lst = create_list_from_file(url_file)
     title_lst = create_list_from_file(title_file)
-    print(title_lst)
-    print(len(title_lst))
     if len(url_lst) > 15:
         url_lst = url_lst[-10:]
         title_lst = title_lst[-10:]
