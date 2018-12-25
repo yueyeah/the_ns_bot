@@ -11,7 +11,7 @@ subreddit = reddit.subreddit('singapore')
 
 # NS keywords and key phrases
 ns_keyphrases = ['national service', 'air force']
-ns_keywords = ['ns', 'nsf', 'army', 'navy', 'bmt', 'military', 'pes', 'enlist', 'enlisting', 'enlistment']
+ns_keywords = ['ns', 'nsf', 'army', 'navy', 'bmt', 'military', 'pes', 'enlist', 'enlisting', 'enlistment', 'ord', 'saf']
 vocation_keywords = ['vocation', 'posting']
 
 # Function: to determine whether post is about vocation/posting
