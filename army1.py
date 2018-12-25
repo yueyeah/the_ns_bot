@@ -7,7 +7,7 @@ import datetime
 reddit = praw.Reddit("botie2")
 
 # Getting target subreddit
-subreddit = reddit.subreddit('Eoformir')
+subreddit = reddit.subreddit('singapore')
 
 # NS keywords and key phrases
 ns_keyphrases = ['national service', 'air force']
