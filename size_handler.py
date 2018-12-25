@@ -30,9 +30,9 @@ def control_size(url_file, title_file):
     title_lst = create_list_from_file(title_file)
     print(title_lst)
     print(len(title_lst))
-    if len(url_lst) > 100:
-        url_lst = url_lst[-35:]
-        title_lst = title_lst[-35:]
+    if len(url_lst) > MAX_LENGTH:
+        url_lst = url_lst[MIN_LENGTH:]
+        title_lst = title_lst[MIN_LENGTH:]
         write_to_file(url_lst, url_file)
         write_to_file(title_lst, title_file)
         print(url_file + " is handled.")
