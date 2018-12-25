@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import praw
 import os
 import string
@@ -11,12 +9,13 @@ reddit = praw.Reddit("botie2")
 # Getting target subreddit
 subreddit = reddit.subreddit('Eoformir')
 
-# NS keywords
+# NS keywords and key phrases
 ns_keyphrases = ['national service', 'air force']
 ns_keywords = ['ns', 'nsf', 'army', 'navy', 'bmt', 'military', 'pes', 'enlist', 'enlisting', 'enlistment']
 vocation_keywords = ['vocation', 'posting']
 
-# Function to determine whether post is about vocation/posting
+# Function: to determine whether post is about vocation/posting
+# 
 def is_vocation_post(title):
     for word in vocation_keywords:
         if word in title:
@@ -121,19 +120,12 @@ def vocation_reply(post, voc_url, voc_title, discuss_url, discuss_title):
         count1 += 1
     post.reply(message)
 
-##def days_since_created(submission):
-##    time_created = submission.created_utc
-##    post_time = datetime.datetime.fromtimestamp(time_created)
-##    time_now = datetime.datetime.utcnow()
-##    time_diff = time_now - post_time
-##    return time_diff.days
-
 # List of posts to be added to the post files
 vocation_posts_lst = []
 monitored_posts_lst = []
 mon_titles = create_list_from_file("monitored_titles.txt")
 # filtering NS-related posts
-for submission in subreddit.new(limit = 12):
+for submission in subreddit.new(limit = POST_LIMIT):
     # remember to check if file is already being monitored
     title = submission.title
     if title in mon_titles:
@@ -159,8 +151,7 @@ new_mon_posts = []
 discuss_posts = []
 for site in mon_urls:
     submission = reddit.submission(url = site)
-    #remember the official version must put: submission.score > 0
-    if len(submission.comments) > 5:
+    if submission.score > SCORE_LIMIT or len(submission.comments) > COMMENT_LIMIT:
         discuss_posts.append(submission)
     else:
         new_mon_posts.append(submission)
