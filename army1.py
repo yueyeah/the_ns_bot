@@ -15,7 +15,6 @@ ns_keywords = ['ns', 'nsf', 'army', 'navy', 'bmt', 'military', 'pes', 'enlist', 
 vocation_keywords = ['vocation', 'posting']
 
 # Function: to determine whether post is about vocation/posting
-# 
 def is_vocation_post(title):
     for word in vocation_keywords:
         if word in title:
@@ -78,7 +77,7 @@ def normal_reply(post, discuss_url, discuss_title):
     url_lst = create_list_from_file(discuss_url)
     title_lst = create_list_from_file(discuss_title)
     if url_lst and title_lst:
-        message = "Recent discussions on NS(rants, jokes, shitposts....): \n \n"
+        message = "IF you want to read more on NS, here are some relatively popular recent posts (rants, jokes, shitposts....): \n \n"
         # Add links to the message iteratively
         count = -1
         while count > -5:
@@ -108,12 +107,12 @@ def vocation_reply(post, voc_url, voc_title, discuss_url, discuss_title):
             discuss_title_lst2.append(discuss_title_lst[count])
         count -= 1
     # Add links to the message iteratively
-    message = "Here are recent threads on vocations/postings: \n \n"
+    message = "Here are some more recent threads on vocations/postings: \n \n"
     count = -1
     while count > -3:
         message += "[" + voc_title_lst[count] + "](" + voc_url_lst[count] + ") \n \n"
         count -= 1
-    message += "More recent discussions on NS(rants, jokes, shitposts...): \n \n"
+    message += "More recent discussions on NS (rants, jokes, shitposts...): \n \n"
     count1 = 0
     while count1 < 4:
         message += "[" + discuss_title_lst2[count1] + "](" + discuss_url_lst2[count1] + ") \n \n"
