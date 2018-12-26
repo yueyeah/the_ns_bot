@@ -83,6 +83,7 @@ def normal_reply(post, discuss_url, discuss_title):
         while count > -5:
             message += "[" + title_lst[count] + "](" + url_lst[count] + ") \n \n"
             count -= 1
+        message += "^I'm the NS_bot - I link to recent popular discussions on NS so that people can read more about NS more easily.)"
         post.reply(message)
     else:
         raise Exception("Discuss file doesn't exist for producing normal reply.")
@@ -117,6 +118,7 @@ def vocation_reply(post, voc_url, voc_title, discuss_url, discuss_title):
     while count1 < 4:
         message += "[" + discuss_title_lst2[count1] + "](" + discuss_url_lst2[count1] + ") \n \n"
         count1 += 1
+    message += "^(I'm the NS_bot - I link to recent popular discussions on NS so that peopel can read more about NS more easily.)"
     post.reply(message)
 
 # List of posts to be added to the post files
