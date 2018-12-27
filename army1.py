@@ -151,6 +151,11 @@ mon_urls = create_list_from_file("monitored_url.txt")
 new_mon_posts = []
 discuss_posts = []
 for site in mon_urls:
+    # In the case of invalid url, just proceed on to the next url
+    try:
+        reddit.submission(url = site)
+    except:
+        continue
     submission = reddit.submission(url = site)
     if submission.score > SCORE_LIMIT or len(submission.comments) > COMMENT_LIMIT:
         discuss_posts.append(submission)
