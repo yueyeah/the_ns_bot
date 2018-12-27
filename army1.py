@@ -157,7 +157,8 @@ for site in mon_urls:
     except:
         continue
     submission = reddit.submission(url = site)
-    if submission.score > SCORE_LIMIT or len(submission.comments) > COMMENT_LIMIT:
+    # list() flattens the comment forest
+    if submission.score > SCORE_LIMIT or len(submission.comments.list()) > COMMENT_LIMIT:
         discuss_posts.append(submission)
     else:
         new_mon_posts.append(submission)
