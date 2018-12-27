@@ -125,11 +125,14 @@ def vocation_reply(post, voc_url, voc_title, discuss_url, discuss_title):
 vocation_posts_lst = []
 monitored_posts_lst = []
 mon_titles = create_list_from_file("monitored_titles.txt")
+discuss_titles = create_list_from_file("discuss_titles.txt")
 # filtering NS-related posts
 for submission in subreddit.new(limit = POST_LIMIT):
     # remember to check if file is already being monitored
     title = submission.title
     if title in mon_titles:
+        continue
+    if title in discuss_titles:
         continue
     title = title.lower()
     if is_related_to_ns(title):
