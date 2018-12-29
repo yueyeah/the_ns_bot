@@ -1,7 +1,7 @@
 # the_ns_bot
 This is my very first project, so...."HELLO WORLD!"
 
-National Service is a topic that is widely talked about in /r/Singapore. In fact, there were quite a few posts ([here](https://old.reddit.com/r/singapore/comments/2d1cf8/interest_gaging_a_subreddit_dedicated_to_ns/) and [here](https://old.reddit.com/r/singapore/comments/6tupin/is_there_a_subreddit_for_ns/), just to name a few) that called for a new subreddit for NS. However, creating a new subreddit for NS may not be the brightest idea, as it may go the way of the other subreddits on the sidebar. 
+National Service is a topic that is widely talked about in /r/Singapore. In fact, there were quite a few posts ([here](https://old.reddit.com/r/singapore/comments/2d1cf8/interest_gaging_a_subreddit_dedicated_to_ns/) and [here](https://old.reddit.com/r/singapore/comments/6tupin/is_there_a_subreddit_for_ns/), just to name a few) that called for a new subreddit for NS. There is indeed a /r/NationalServiceSG in the sidebar, but it has less than 200 subs the last time I checked, and there's not a lot of discussion as well. 
 
 So I decided to make an NS bot instead.
 
