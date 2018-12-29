@@ -10,8 +10,8 @@ reddit = praw.Reddit("botie2")
 subreddit = reddit.subreddit('singapore')
 
 # NS keywords and key phrases
-ns_keyphrases = ['national service', 'air force']
-ns_keywords = ['ns', 'nsf', 'army', 'navy', 'bmt', 'military', 'pes', 'enlist', 'enlisting', 'enlistment', 'ord', 'saf']
+ns_keyphrases = ['national service', 'air force', 'singapore armed forces']
+ns_keywords = ['ns', 'nsf', 'army', 'navy', 'bmt', 'military', 'pes', 'enlist', 'enlisting', 'enlistment', 'ord', 'saf', 'ipt', 'ippt']
 vocation_keywords = ['vocation', 'posting']
 
 # Function: to determine whether post is about vocation/posting
