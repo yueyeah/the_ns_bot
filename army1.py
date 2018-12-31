@@ -38,14 +38,15 @@ def is_related_to_ns(title):
 
 #Function to append to url_file and title_file
 def append_to_file(update, url_file, title_file):
-    # don't do anything if file doesn't exist
     if not os.path.isfile(url_file) or not os.path.isfile(title_file):
         raise Exception("Append target file doesn't exist.")
     else:
-        for post in update:
-            with open(url_file, "a") as f:
-                f.write("\n" + post.url)
-            with open(title_file, "a") as g:
+        with open(url_file, "a") as f:
+            for post in update:
+                # need to get shortlink instead of url, as url cannot get reddit link for link post
+                f.write("\n" + post.shortlink)
+        with open(title_file, "a") as g:
+            for post in update:
                 g.write("\n" + post.title)
 
 # Function to write to url_file and title_file
@@ -55,7 +56,7 @@ def write_to_file(update, url_file, title_file):
     else:
         with open(url_file, "w") as f:
             for post in update:
-                f.write("\n" + post.url)
+                f.write("\n" + post.shortlink)
         with open(title_file, "w") as g:
             for post in update:
                 g.write("\n" + post.title)
@@ -140,11 +141,9 @@ for submission in subreddit.new(limit = POST_LIMIT):
             vocation_reply(submission, "vocation_url.txt", "vocation_titles.txt", "discuss_url.txt", "discuss_titles.txt")
             vocation_posts_lst.append(submission)
             monitored_posts_lst.append(submission)
-            print(submission.title + " is vocation_post")
             continue
         normal_reply(submission, "discuss_url.txt", "discuss_titles.txt")
         monitored_posts_lst.append(submission)
-        print(submission.title + " is normal_post")
 # Updating files
 append_to_file(vocation_posts_lst, "vocation_url.txt", "vocation_titles.txt")
 append_to_file(monitored_posts_lst, "monitored_url.txt", "monitored_titles.txt")
