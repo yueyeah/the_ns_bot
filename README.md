@@ -15,3 +15,5 @@ Furthermore, the main target audience are our NSFs, working hard to defend our c
 Also, if Reddit Mobile is widely used by NSmen and MRuncles as well (I mean should be lah. Would you use your work computer to look at Reddit? Or prefer to use phone? Got more privacy from prying eyes), then it should be more convenient for them to look through all the popular discussions as well. 
 
 Enjoy!!
+
+A little update - I pulled the bot. It didn't rub off well with most Redditors, and was being downvoted to oblivion. It was an interesting project though - I may do a few like this in the future. 
