@@ -16,4 +16,4 @@ Also, if Reddit Mobile is widely used by NSmen and MRuncles as well (I mean shou
 
 Enjoy!!
 
-A little update - I pulled the bot. It didn't rub off well with most Redditors, and was being downvoted to oblivion. It was an interesting project though - I may do a few like this in the future. 
+P.S. The camelorange bot has been pulled. It was being downvoted, and I guess it was too intrusive and spammy because it would actually comment on every post that is NS-related. However, I am working on a new bot that would collect all NS-related posts, filter out all the false positives, then post a compilation at the end of every year, just in time for those who are about to enlist at the start of the next year. 
